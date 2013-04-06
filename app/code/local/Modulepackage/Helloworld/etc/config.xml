@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Modulepackage_Helloworld>
+			<version>0.2.0</version>
+		</Modulepackage_Helloworld>	
+	</modules>
+	<frontend>
+		<routers>
+			<helloworld>
+				<use>standard</use>
+				<args>
+					<module>Modulepackage_Helloworld</module>
+					<frontName>helloworld</frontName>
+				</args>
+			</helloworld>
+		</routers>
+	</frontend>
+
+	<global>
+		<models>
+			<helloworld>
+				<class>Modulepackage_Helloworld_Model</class>				
+				<resourceModel>helloworld_mysql4</resourceModel>
+			</helloworld>
+			<helloworld_mysql4>
+				<class>Modulepackage_Helloworld_Model_Resource_Mysql4</class>
+				<entities>
+					<blogpost>
+						<table>blog_posts</table>
+					</blogpost>
+				</entities>
+			</helloworld_mysql4>
+			
+			<resources>
+				<helloworld_write>
+					<connection>
+						<use>default_write</use>
+					</connection>
+				</helloworld_write>
+				<helloworld_read>
+					<connection>
+						<use>default_read</use>
+					</connection>
+				</helloworld_read>
+				
+				<helloworld_setup>
+					<setup>
+						<module>Modulepackage_Helloworld</module>
+						<class>Modulepackage_Helloworld_Model_Resource_Mysql4_Setup</class>
+					</setup>
+					<connection>
+						<use>core_setup</use>
+					</connection>
+				</helloworld_setup>
+			</resources>
+		</models>
+	</global>
+</config>

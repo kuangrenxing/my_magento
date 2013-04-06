@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Modulepackage_Myfirstmodule>   <!-- 注意大小写-->
+            <active>true</active>                   <!--  插件默认激活的-->
+            <codePool>local</codePool>      <!--插件文件路径是app\code\local-->
+        </Modulepackage_Myfirstmodule>  <!--注意大小写-->
+    </modules>
+</config>
